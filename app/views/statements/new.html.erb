@@ -31,10 +31,14 @@
     </div>
   </fieldset>
   <div class="col-lg-12">
-    <%= f.submit 'Share', class: "col-lg-offset-4 col-lg-4 btn btn-primary" %>
+    <%= f.submit 'UPLOAD!', class: "col-lg-offset-4 col-lg-4 btn btn-primary" %>
   </div>
 <% end %> 
 </div>
+<% @s3_direct_post = S3_BUCKET.presigned_post({ key: "uploads/#{SecureRandom.uuid}/${filename}", 
+                                                acl: 'public-read', 
+                                                success_action_status: '201', 
+                                                metadata: { 'original-filename' => '${filename}' } }) %>
 <script>
   $(function() {
     $('#<%= "upload_modal" %> #ugc_date').datetimepicker({
@@ -49,20 +53,16 @@
   }  
 </style>
 
-<% @s3_direct_post = S3_BUCKET.presigned_post({ key: "uploads/#{SecureRandom.uuid}/${filename}", 
-                                                acl: 'public-read', 
-                                                success_action_status: '201', 
-                                                metadata: { 'original-filename' => '${filename}' } }) %>
-
 <script>  
   $(function() {
     var file_upload = $('#file_upload');
-    var file_input = $('#<%= "upload_modal" %> #direct-upload');  
+    var file_input = $('#direct-upload');  
     var form = $(file_input.parents('form:first'));
     var submit_button = form.find('input[type="submit"]');
     var progress_bar = $("<div class='bar'></div>");
     var pb_container = $("<div class='col-lg-12'></div>").append(progress_bar);
     file_upload.after(pb_container);
+    console.log('init file upload');
     file_input.fileupload({
       maxFileSize: 1000000000,
       fileInput: file_input,
@@ -78,6 +78,7 @@
         progress_bar.css('width', progress + '%')
       },
       start: function (e) {
+        console.log('called start');
         submit_button.prop('disabled', true);
         progress_bar.       
           css('background-repeat', 'no-repeat').
@@ -92,6 +93,7 @@
           $('#close_button').prop('disabled', true);
       },
       done: function(e, data) {
+        console.log('called finish');
         submit_button.prop('disabled', false);
         $('#upload_modal').modal({
           backdrop: true,
