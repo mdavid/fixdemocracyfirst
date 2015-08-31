@@ -14,5 +14,5 @@ class StaticPagesController < ApplicationController
 
   def upload_video
   end
-  
+
 end

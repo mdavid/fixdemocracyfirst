@@ -1,0 +1,35 @@
+<style>
+fieldset { margin-top: 30px }
+.input-group-addon { padding: 10px 11px !important }
+</style>
+<%= form_for @default_statement, html: { class: "direct-upload col-lg-12 form-horizontal" } do |f| %>
+<div class="modal fade col-lg-12" id="beverly" tabindex="-1" role="dialog" 
+aria-labelledby="upload_title" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content col-lg-12">
+  			<div class="modal-header">
+			    <button id="close-button" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			    <h2 class="modal-title" id="upload_title"><%= modal_title %></h2>
+			</div>
+			<div class="modal-body col-lg-12">
+				<em class="col-lg-12"><%= modal_description %></em>
+  				<div class="col-lg-4">
+    				<div style="padding: 0">
+      					<div class="col-lg-12"><%=AMERICA_NEW_YORK_TIME_ZONE.format_date(@video.date)%></div>
+      						<h4 class="col-lg-12">
+					        <% if @current_user.admin? %>
+					          <%=link_to "#{video.title}", edit_statement_path(@video) %>
+					        <% else %>
+					          <%=@video.title %>
+					        <% end %>
+						    </h4>
+					        <iframe src="<%=@video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
+					    </div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+</div>
+
+<% end %>
