@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users
   get 'statements/browse' => 'statements#browse'
   get 'statements/new' => 'statements#new'
+  get 'statements/show/:id' => 'statements#show#'
   resources :statements
   resources :people
   resources :candidates
