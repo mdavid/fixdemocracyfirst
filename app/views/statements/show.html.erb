@@ -30,6 +30,7 @@
   	<li class="next"><%= link_to 'Edit →', edit_statement_path(@statement) %></li>
   </ul>
 
+  <% @video = @statement #CAB: *slightly* hacky way to stick a @video variable in the modal %>
   <%= render 'modal', 
     modal_id: "beverly", 
     modal_title: "Share Video or Audio", 
