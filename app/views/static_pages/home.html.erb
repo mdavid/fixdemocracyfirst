@@ -77,9 +77,9 @@
     }
   }
 </style>
-<div class="row well">
+<div class="col-lg-offset-1 col-lg-10 row well" style="margin-top: 10px">
   <div class="col-lg-3">
-    <iframe width="300" height="300" src="https://www.youtube.com/embed/6L54o_H_D6E" frameborder="0" allowfullscreen></iframe>
+    <iframe width="250" height="250" src="https://www.youtube.com/embed/6L54o_H_D6E" frameborder="0" allowfullscreen></iframe>
   </div>
   <div class="col-lg-6">
     <h2>FIX<br/>
@@ -88,7 +88,7 @@
     <p>Imagine what we could do after we get democracy working again. With a government that represents all citizens equally, so many things will be possible. So tell us: why do you want to #FixDemocracyFirst?</p>
   </div>
   <div class="col-lg-3" style="margin-top: 250px">
-    <%= link_to 'Tell us your story!', {controller: :statements, action: :new}, class: "btn btn-default", style: "width: 300px" %>
+    <%= link_to 'Tell us your story!', {controller: :statements, action: :new}, class: "btn btn-default", style: "width: 250px" %>
   </div>
 </div>
 <%= render 'statements/videos' %>
