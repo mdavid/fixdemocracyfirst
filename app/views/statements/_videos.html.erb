@@ -2,11 +2,10 @@
 <% @videos.each do |video| %>  
   <div class="col-lg-4">
     <div style="padding: 0">
-      <div class="col-lg-12"><%=AMERICA_NEW_YORK_TIME_ZONE.format_date(video.date)%></div>
+      <iframe class="col-lg-12" style="margin-bottom: 0" src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
       <h4 class="col-lg-12">
         <%=link_to "#{video.title}", {controller: :statements, action: :show, id: video.id} %>
       </h4>
-      <iframe src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
  
     </div>
   </div>
