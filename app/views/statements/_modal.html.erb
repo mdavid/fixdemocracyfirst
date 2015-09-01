@@ -1,0 +1,23 @@
+<%= form_for @default_statement, html: { class: "direct-upload col-lg-12 form-horizontal" } do |f| %>
+<div class="modal fade col-lg-12" id="individual-video-page-<%=video.id%>" tabindex="-1" role="dialog"
+aria-labelledby="upload_title" aria-hidden="true" data-keyboard="false" data-backdrop="static" style="display: none">
+	<div class="modal-dialog">
+	  <div class="modal-content col-lg-12">
+		  <div class="modal-header">
+			  <button id="close-button" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <h2 class="modal-title" id="upload_title"><%=video.title %></h2>
+      </div>
+      <div class="well bs-component col-lg-12">
+        <div class="row">
+          <div class="col-md-8">
+            <iframe class='large-video-frame' src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
+          </div>
+        </div>
+        <ul class="pager">
+        	<li class="next"><%= link_to 'Edit →', edit_statement_path(video) %></li>
+        </ul>
+      </div>
+		</div>
+  </div>
+</div>
+<% end %>
