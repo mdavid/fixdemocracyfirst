@@ -6,7 +6,6 @@
       <h4 class="col-lg-12">
         <%=link_to "#{video.title}", {controller: :statements, action: :show, id: video.id}, {:remote => true, 'data-toggle' => "modal", 'data-target' => '#individual-video-page'} %>
       </h4>
-
       <iframe src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
  
     </div>
