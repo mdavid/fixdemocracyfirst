@@ -6,6 +6,9 @@
 <% end %>
 
 <div class="well bs-component col-lg-12">
+  <!--TODO BL: this needs to be the correct video, not the first one, hardcoded-->
+  <% @video = @videos[0] #CAB: *slightly* hacky way to stick a @video variable in the modal %>
+  <% @statement = @video #CAB: *slightly* hacky way to stick a @video variable in the modal %>
   <p>
     <strong>Title:</strong>
     <%= @statement.title %>
@@ -25,15 +28,14 @@
     <strong>Video URL:</strong>
     <%= @statement.youtube_url %>
   </p>
-    
+
   <ul class="pager">
   	<li class="next"><%= link_to 'Edit →', edit_statement_path(@statement) %></li>
   </ul>
 
-  <% @video = @statement #CAB: *slightly* hacky way to stick a @video variable in the modal %>
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
       <iframe class='large-video-frame' src="<%=@video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
     </div>
   </div>

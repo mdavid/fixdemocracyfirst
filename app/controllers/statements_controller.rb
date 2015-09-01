@@ -15,6 +15,7 @@ class StatementsController < ApplicationController
   # GET /statements/1
   # GET /statements/1.json
   def show
+    @videos = Statement.all  # TODO BL: this needs to be one video, not all of them
   end
 
   # GET /statements/new
