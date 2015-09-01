@@ -4,11 +4,25 @@
     <div style="padding: 0">
       <div class="col-lg-12"><%=AMERICA_NEW_YORK_TIME_ZONE.format_date(video.date)%></div>
       <h4 class="col-lg-12">
-        <%=link_to "#{video.title}", {controller: :statements, action: :show, id: video.id} %>
+        <%=link_to "#{video.title}", {controller: :statements, action: :show, id: video.id}, {:remote => true, 'data-toggle' => "modal", 'data-target' => '#individual-video-page'} %>
       </h4>
+
       <iframe src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
  
     </div>
   </div>
 <% end %>
+
 </div>
+
+<%= render 'modal',
+    modal_id: "individual-video-page",
+    modal_title: "Look at this video!",
+    modal_description: "This is a video somebody uploaded.",
+    include_candidate_and_event_fields: true,
+            steps: {
+            1 => "Step 1: Tell us about yourself",
+            2 => "Step 2: Tell us what you're sharing",
+            3 => "Step 3: Select the video (or audio) file" },
+    notes_placeholder: 'Please share any additional info about your submission' %>
+
