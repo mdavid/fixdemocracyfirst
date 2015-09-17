@@ -31,5 +31,7 @@ launch.sh
 /bower_components/*
 
 .idea
+/public/assets/*
+/vendor/assets/rootstrap/*
 
 *.*~
