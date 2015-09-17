@@ -14,4 +14,5 @@
 //= require jquery
 //= require jquery-ui/datepicker
 //= require jquery_ujs
+//= require rootstrap.min
 //= require_tree .
