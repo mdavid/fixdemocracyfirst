@@ -39,13 +39,6 @@
                                                 acl: 'public-read', 
                                                 success_action_status: '201', 
                                                 metadata: { 'original-filename' => '${filename}' } }) %>
-<script>
-  $(function() {
-    $('#<%= "upload_modal" %> #ugc_date').datetimepicker({
-      format: 'MM/DD/YYYY'
-    });
-  });
-</script>
 <style>
   .bar {
     margin-top: .5em;
@@ -86,20 +79,10 @@
           css('display', 'block').
           css('width', '0%').
           css('height', '20px')
-          $('#upload_modal').modal({
-            backdrop: 'static',
-            keyboard: false
-          });
-          $('#close_button').prop('disabled', true);
       },
       done: function(e, data) {
         console.log('called finish');
         submit_button.prop('disabled', false);
-        $('#upload_modal').modal({
-          backdrop: true,
-          keyboard: true
-        });
-        $('#close_button').prop('disabled', false);
         var key   = $(data.jqXHR.responseXML).find("Key").text();
         var url   = '//<%= URI(@s3_direct_post.url).host %>/' + key;
         var input = $("<input />", { type:'hidden', name: file_input.attr('name'), value: url })
@@ -109,11 +92,6 @@
         console.log(e);
         console.log(data);
         submit_button.prop('disabled', false);
-        $('#upload_modal').modal({
-          backdrop: true,
-          keyboard: true
-        });
-        $('#close_button').prop('disabled', false);
         progress_bar.
           css("background", "red")
       }
