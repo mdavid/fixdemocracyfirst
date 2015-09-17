@@ -1,37 +1,47 @@
 
 <style>
   fieldset { margin-top: 30px }
+  fieldset em, div { margin-bottom: 20px; }
   .input-group-addon { padding: 10px 11px !important }
 </style>
 <div class="row">
-<%=form_for @default_statement, html: { class: "direct-upload col-lg-12 form-horizontal" } do |f| %>
-  <h2 class="col-lg-12" id="upload_title"><%= "Share Video or Audio" %></h2>
-  <div class="col-lg-12">
-    <em class="col-lg-12"><%= "By sharing your content with us, you grant us permission to share it with others." %></em>
-  <%= f.fields_for :user, @default_statement.user do |u| %>
-    <fieldset class="col-lg-12">
-      <div class="col-lg-6">
-        <%=u.text_field :first_name, class: "form-control", placeholder: "First Name"%>
+  <div class="col-lg-offset-1 col-lg-4">
+    <h1 class="col-lg-12">Why do you want to #FixDemocracyFirst?</h1>
+    <span style="margin-bottom: 20px" class="col-lg-12">This is your story! We'd like to know...</span>
+    <ul class="list-group col-lg-12">
+      <li class="list-group-item">What's your name and where do you live?</li>
+      <li class="list-group-item">What's the issue that is most important to you?</li>
+      <li class="list-group-item">How is your issue being blocked by the corrupting influence of money in politics and the unequal treatment of citizens?</li>
+      <li class="list-group-item">Why do you support Lessig for President?</li>
+    </ul>    
+  </div>
+<%=form_for @default_statement, html: { class: "direct-upload form-horizontal" } do |f| %>
+    <div class="col-lg-offset-1 col-lg-5">
+      <fieldset>
+        <legend><%= "Share your video or audio" %></legend>
+        <em class="col-lg-12"><%= "By sharing your content with us, you grant us permission to share it with others." %></em>
+      <%= f.fields_for :user, @default_statement.user do |u| %>
+        <div class="col-lg-6">
+          <%=u.text_field :first_name, class: "form-control", placeholder: "First Name"%>
+        </div>
+        <div class="col-lg-6">
+          <%=u.text_field :last_name, class: "form-control", placeholder: "Last Name"%>
+        </div>
+        <div class="col-lg-6">
+          <%=u.text_field :email, class: "form-control", placeholder: "Email"%>
+        </div>
+        <div class="col-lg-6">
+          <%=u.text_field :postal_code, class: "form-control", placeholder: "ZIP Code"%>
+        </div>
+      <% end %>
+      <em class="col-lg-offset-1 col-lg-11">Want to remain anonymous? That's cool. All fields are optional.</em>
+      <div id="file_upload" class="col-lg-12">
+        <%= f.file_field :url, accept: "*", id: 'direct-upload', class: "col-lg-12" %>
       </div>
-      <div class="col-lg-6">
-        <%=u.text_field :last_name, class: "form-control", placeholder: "Last Name"%>
-      </div>
-      <div class="col-lg-6">
-        <%=u.text_field :email, class: "form-control", placeholder: "Email"%>
-      </div>
-      <div class="col-lg-6">
-        <%=u.text_field :postal_code, class: "form-control", placeholder: "ZIP Code"%>
+      <div class="col-lg-12" style="margin-top: 20px">
+        <%= f.submit 'UPLOAD!', class: "col-lg-offset-4 col-lg-4 btn btn-primary" %>
       </div>
     </fieldset>
-  <% end %>
-  <em class="col-lg-offset-1 col-lg-11">Want to remain anonymous? That's cool. All fields are optional.</em>
-  <fieldset class="col-lg-12">
-    <div id="file_upload" class="col-lg-12">
-      <%= f.file_field :url, accept: "*", id: 'direct-upload', class: "col-lg-12" %>
-    </div>
-  </fieldset>
-  <div class="col-lg-12">
-    <%= f.submit 'UPLOAD!', class: "col-lg-offset-4 col-lg-4 btn btn-primary" %>
   </div>
 <% end %> 
 </div>

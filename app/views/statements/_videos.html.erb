@@ -1,17 +1,9 @@
 <div id="video-answers" class="row col-lg-12">
 <% @videos.each do |video| %>  
-  <div class="col-lg-4">
-    <div style="padding: 0">
-      <iframe style="margin-bottom: 0" src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
-      <h4 class="col-lg-12">
-        <%=link_to "#{video.title}", { 
-          controller: :statements, 
-          action: :show, 
-          id: video.id}, { 
-            :remote => true, 
-            'data-toggle' => "modal", 
-            'data-target' => "#individual-video-page-#{video.id}" } %>
-      </h4> 
+  <div class="col-lg-3">
+    <div style="margin-left: 5px">
+      <h4 class="col-lg-12"><%=video.title%></h4> 
+      <iframe width="324" height="180" src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
     </div>
   </div>
   <%= render 'statements/modal', video: video %>  
