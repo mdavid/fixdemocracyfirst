@@ -12,10 +12,23 @@ a {
   }
 }
 
+.clearfix2 { clear: both }
+
 // Layout
 
 .main-header {
   box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.why li {
+  margin: 8px 0;
+}
+
+.videoform input,
+.videoform textarea {
+  max-width: 100%;
+  width: 350px;
+  margin-top: 15px
 }
 
 .main-nav {
@@ -37,8 +50,13 @@ a {
 
 $shead-height: 65px;
 
+.subheader { 
+font: 19px ; 
+line-height: 24px;
+margin: 20px 0;
+}
+
 .main-subheader {
-  border-bottom: 1px solid #bbb;
   height: $shead-height;
 }
 
@@ -89,10 +107,17 @@ $shead-height: 65px;
 }
 
 .main-footer__vertical-lg {
-  padding-left: 15px;
+  padding-left: 0;
+
+  ul {
+    margin: 0 ;
+    padding: 0
+  }
 
   li {
     text-transform: uppercase;
+    list-style-type: none;
+    padding: 5px 0;
   }
 }
 

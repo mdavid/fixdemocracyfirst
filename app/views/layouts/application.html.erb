@@ -66,7 +66,7 @@
     <div id="fb-root"></div>
     <header class="main-header">
       <nav class="navbar navbar-default navbar-static-top main-nav">
-        <div class="container-fluid">
+        <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
               <span class="sr-only">Toggle navigation</span>
@@ -94,7 +94,7 @@
       </nav>
     </header>
     <div class="main-subheader">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
           <div class="col-md-3 col-sm-3">
             <%= image_tag 'lessig-fdf-slogan.png', { class: 'main-subheader__tagline' } %>
@@ -116,7 +116,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <%= yield %>
       </div>
@@ -136,13 +136,11 @@
             <%=link_to 'Back to Lessig2016.us',
               'http://Lessig2016.us', target: '_blank' %>
             <p class="paid-for-box">
-              Paid for by Lessig Equal Citizens Exploratory Committee
+              Paid for by Lessig2016.US
             </p>
           </div>
           <div class="col-md-4 col-sm-12 main-footer__area main-footer__area--3">
-            <span class="footer-detail">&copy; 2015 Lessig Equal Citizens</span>
-            <span class="footer-detail">Exploratory Committee</span>
-            <span class="footer-detail">Some Rights Reserved</span>
+            
             <ul class="main-footer__horizontal-lg">
               <li><%= link_to 'Email', 'mailto:info@lessig2016.us?subject=Fix%20Democracy%20First' %></li> |
               <li><%= link_to 'Privacy Policy', 'https://lessig2016.us/privacy-policy/', target: '_blank' %></li> |
