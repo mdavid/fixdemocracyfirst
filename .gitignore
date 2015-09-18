@@ -29,3 +29,10 @@ launch.sh
 .env
 
 /bower_components/*
+
+.idea
+/public/assets/*
+/vendor/assets/rootstrap/*
+
+*.*~
+.DS_Store

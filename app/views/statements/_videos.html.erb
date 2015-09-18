@@ -1,17 +1,22 @@
 <div id="video-answers" class="row col-lg-12">
 <% @videos.each do |video| %>  
-  <div class="col-lg-4">
-    <div style="padding: 0">
-      <div class="col-lg-12"><%=AMERICA_NEW_YORK_TIME_ZONE.format_date(video.date)%></div>
-      <h4 class="col-lg-12">
-      <% if @current_user.admin? %>
-        <%=link_to "#{video.title}", edit_statement_path(video) %>
-      <% else %>
-        <%=video.title %>
-      <% end %>
-      </h4>
-      <iframe src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
+  <div class="col-lg-3">
+    <div style="margin-left: 5px">
+      <h4 class="col-lg-12"><%=video.title%></h4> 
+      <iframe width="324" height="180" src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
     </div>
+    <div class="col-lg-12">
+      <a href="https://twitter.com/share"
+         class="twitter-share-button"
+         data-text="Why do you want to fix our democracy? Check out <%= video.title %>" <!-- TODO deep link to video>
+         data-via="lessig2016"
+         data-size="large"
+         data-hashtags="FixDemocracyFirst">Tweet</a>
+      <div class="fb-share-button"
+         data-href="http://fixdemocracyfirst.us/" <!-- TODO deep link to video -->
+         data-layout="button_count"></div>
+     </div>
   </div>
+  <%= render 'statements/modal', video: video %>  
 <% end %>
 </div>
