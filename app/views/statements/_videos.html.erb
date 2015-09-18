@@ -2,7 +2,7 @@
 <% @videos.each do |video| %>  
   <div class="col-lg-3">
     <div style="margin-left: 5px">
-      <h4 class="col-lg-12"><%=video.title%></h4> 
+      <h4 class="col-lg-12"><%=link_to video.title, video %></h4> 
       <iframe width="324" height="180" src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0"></iframe>
     </div>
     <div class="col-lg-12">
