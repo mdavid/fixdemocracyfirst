@@ -59,4 +59,12 @@ class Statement < ActiveRecord::Base
   def date
     self.event_day ? self.event_day.date : self.created_at 
   end
+  
+  def slug
+    self.title ? self.title.downcase.gsub(" ", "-") : ""
+  end
+
+  def to_param
+    "#{id}-#{slug}"
+  end
 end
