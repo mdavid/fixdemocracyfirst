@@ -1,8 +1,26 @@
+<style>
+.modal-title {
+    margin: 0 0 50px 0;
+    font-size: 45px;
+    letter-spacing: -0.02em;
+    line-height: 52px;
+}
+</style>
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-4">
     <h1 class="modal-title" id="upload_title"><%=@statement.title %></h1>
+    <h4>Share this video:</h4>
+    <span class="st_facebook_large" displaytext="Facebook"></span>
+    <span class="st_twitter_large" displaytext="Tweet"></span>
+    <span class="st_tumblr_large" displaytext="Tumblr"></span>
+    <span class="st_linkedin_large" displaytext="LinkedIn"></span>
+    <span class="st_pinterest_large" displaytext="Pinterest"></span>
+    <span class="st_googleplus_large" displaytext="Google +"></span>
+    <span class="st_email_large" displaytext="Email"></span>
+    <h5>Create your own:</h5>
+    <a class="btn btn-lg btn-info pull-left" style="width: 250px; font-size: 22px ; background: blue" href="/statements/new">Share your story</a>
   </div>
-  <div class="col-lg-offset-2 col-lg-8">
+  <div class="col-lg-8">
     <iframe width="640" 
             height="480" 
             class='large-video-frame'       
