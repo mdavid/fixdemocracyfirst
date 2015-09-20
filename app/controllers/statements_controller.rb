@@ -15,6 +15,7 @@ class StatementsController < ApplicationController
   # GET /statements/1
   # GET /statements/1.json
   def show
+    redirect_to '/' unless @statement.approved or @current_user.admin?
   end
 
   # GET /statements/new
