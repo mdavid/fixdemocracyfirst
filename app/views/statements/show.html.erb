@@ -21,10 +21,12 @@
     <a class="btn btn-lg btn-info pull-left" style="width: 250px; font-size: 22px ; background: blue" href="/statements/new">Share your story</a>
   </div>
   <div class="col-lg-8">
+    <% unless @statement.youtube_embed_url.blank? %>
     <iframe width="640" 
             height="480" 
             class='large-video-frame'       
             src="<%=@statement.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0">
     </iframe>
+    <% end %>
   </div>
 </div>
