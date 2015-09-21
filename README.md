@@ -2,6 +2,12 @@ Fix Democracy First
 ===================
 This web site and platform supports uploading, approval and redistribution of videos answering the question: "Tell us your story of why we need to #FixDemocracyFirst." http://fixdemocracyfirst.us 
 
+tl;dr
+-----
+* **Applicable skills** Ruby on Rails, HTML/CSS/JS
+* **Slack** [#gh-fixdemocracyfirst](https://teamlessigtech.slack.com/messages/gh-fixdemocracyfirst/)
+* **Project lead** [@bucchere](https://teamlessigtech.slack.com/team/bucchere)
+
 3rd-Party Depedencies
 ---------------------
 1. [RVM](http://rvm.io)

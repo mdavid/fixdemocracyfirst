@@ -1,10 +1,15 @@
 <style>
-  div.share-video { padding: 10px 0 }
+  div.share-video { padding: 10px 0 ; opacity: 0.3;}
+  div.share-video:hover { opacity: 1;}
 </style>
-<div id="video-answers" class="row col-lg-12">
+<div class="clearfix2"></div>
+
+</div>
+<div id="video-answers" class="row col-lg-12 video-row">
+  <div class="subheader_title col-lg-12"><div>Featured Videos</div></div>
+
 <% @videos.each do |video| %>  
-  <div class="col-lg-3">
-    <h4><%=link_to video.title, video %></h4> 
+  <div class="col-lg-4">    
     <div style="padding-top: 55.6%; position: relative; height: 0; width: 100%">
       <iframe style="width: 100%; height: 100%; top: 0; left: 0; position: absolute" 
         src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" 
