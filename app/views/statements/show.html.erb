@@ -1,1 +1,26 @@
-<!-- CAB moved to _modal.html.erb -->
+<style>
+.modal-title {
+    margin: 0 0 50px 0;
+    font-size: 45px;
+    letter-spacing: -0.02em;
+    line-height: 52px;
+}
+</style>
+<div class="row">
+  <div class="col-lg-4 videoinfo">
+    <h1 class="modal-title" id="upload_title"><%=@statement.title %></h1>
+    <h4>Share this video:</h4>
+        <div class="addthis_sharing_toolbox"></div>
+    <h5>Create your own:</h5>
+    <a class="btn btn-lg btn-info pull-left main-cta" href="/statements/new">Share your story</a>
+  </div>
+  <div class="col-lg-8">
+    <% unless @statement.youtube_embed_url.blank? %>
+    <iframe width="640" 
+            height="480" 
+            class='large-video-frame'       
+            src="<%=@statement.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0">
+    </iframe>
+    <% end %>
+  </div>
+</div>
