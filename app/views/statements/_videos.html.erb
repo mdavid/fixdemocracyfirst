@@ -1,3 +1,5 @@
+
+
 <style>
   div.share-video { padding: 10px 0 ; opacity: 0.3;}
   div.share-video:hover { opacity: 1;}
@@ -9,13 +11,47 @@
   <div class="subheader_title col-lg-12"><div>Featured Videos</div></div>
 
 <% @videos.each do |video| %>  
-  <div class="col-lg-4">    
+  <div class="col-lg-4">
     <div style="padding-top: 55.6%; position: relative; height: 0; width: 100%">
       <iframe style="width: 100%; height: 100%; top: 0; left: 0; position: absolute" 
         src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" 
         frameborder="0">
       </iframe>
     </div>
+      <div class="video_title"><%=link_to video.title, video %></div> 
+
+    <div class="share-video">
+      <a href="https://twitter.com/share" 
+         class="twitter-share-button" 
+         data-url="<%= url_for video %>"
+         data-text="Why do YOU want to fix our democracy? Check out <%= video.title %>"
+         data-related="lessig2016"
+         data-hashtags="FixDemocracyFirst">Tweet</a>
+         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <div class="fb-share-button"
+         data-href="http://fixdemocracyfirst.us/statements/<%=video.id%>-<%=video.slug%>"
+         data-layout="button_count"></div>
+      </div>
+    </div>
+  <%= render 'statements/modal', video: video %>  
+<% end %>
+
+
+<div class="clearfix2"></div>
+
+<div id="video-answers" class="row col-lg-12 video-row">
+  <div class="subheader_title col-lg-12"><div>Latest Videos</div></div>
+<% @videos.each do |video| %>  
+  <div class="col-lg-4">
+    
+    <div style="padding-top: 55.6%; position: relative; height: 0; width: 100%">
+      <iframe style="width: 100%; height: 100%; top: 0; left: 0; position: absolute" 
+        src="<%=video.youtube_embed_url%>?hd=1&rel=0&autohide=1&showinfo=0" 
+        frameborder="0">
+      </iframe>
+    </div>
+      <div class="video_title"><%=link_to video.title, video %></div> 
+
     <div class="share-video">
       <a href="https://twitter.com/share" 
          class="twitter-share-button" 
