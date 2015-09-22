@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     #try to find the user
     if user_id
       begin
-        @current_user = User.find(user_id)
+        @current_user = User.find(user_id.to_i)
         return @current_user
       rescue Exception => e
         #user not found shouldn't mask other possible errors
@@ -39,6 +39,6 @@ class ApplicationController < ActionController::Base
   end
   
   def require_admin
-    #redirect_to '/' unless @current_user.admin?
+    redirect_to '/' unless @current_user.admin?
   end
 end
