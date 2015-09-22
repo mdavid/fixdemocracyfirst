@@ -22,14 +22,14 @@
 
     <div class="share-video">
       <a href="https://twitter.com/share" 
-         class="twitter-share-button" 
-         data-url="<%= url_for video %>"
+         class="twitter-share-button"
+         data-url="<%=request.original_url%><%=url_for video%>"
          data-text="Why do YOU want to fix our democracy? Check out <%= video.title %>"
          data-related="lessig2016"
          data-hashtags="FixDemocracyFirst">Tweet</a>
          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       <div class="fb-share-button"
-         data-href="http://fixdemocracyfirst.us/statements/<%=video.id%>-<%=video.slug%>"
+         data-href="<%=request.original_url%><%=url_for video%>"
          data-layout="button_count"></div>
       </div>
     </div>
