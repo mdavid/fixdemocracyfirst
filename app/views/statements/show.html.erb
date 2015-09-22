@@ -30,6 +30,7 @@
   <meta property="og:description" content="<%= @statement.title %>">
   <meta property="og:video:width" content="640">
   <meta property="og:video:height" content="480">
+  <meta property="og:image" content="<%= @statement.youtube_video_card_url %>">
   <meta property="og:video:url" content="<%= @statement.youtube_url.gsub('https://', 'http://') %>">
   <meta property="og:video:secure_url" content="<%= @statement.youtube_url.gsub('http://', 'https://') %>">
   <meta property="og:video:type" content="application/x-shockwave-flash">
@@ -38,6 +39,7 @@
   <meta name="twitter:site" content="@lessig2016">
   <meta name="twitter:title" content="Fix Democracy First">
   <meta name="twitter:description" content="<%= @statement.title %>">
+  <meta name="twitter:image" content="<%= @statement.youtube_video_card_url %>">
   <meta name="twitter:player" content="<%= @statement.youtube_embed_url %>">
   <meta name="twitter:player:width" content="640">
   <meta name="twitter:player:height" content="480">

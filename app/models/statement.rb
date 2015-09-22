@@ -52,8 +52,21 @@ class Statement < ActiveRecord::Base
     c ? c.person_name : ''
   end 
   
+  def youtube_id 
+    return nil unless self.youtube_url
+    URI::parse(self.youtube_url).query.split('&').each do |q|
+      name, value = q.split('=')
+      return value if name == 'v'
+    end
+    nil
+  end
+  
   def youtube_embed_url
     self.youtube_url ? self.youtube_url.gsub('watch?v=', 'embed/') : ''
+  end
+  
+  def youtube_video_card_url
+    "https://i.ytimg.com/vi/#{self.youtube_id}/maxresdefault.jpg"
   end
   
   def date
