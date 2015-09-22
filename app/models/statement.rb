@@ -74,7 +74,7 @@ class Statement < ActiveRecord::Base
   end
   
   def slug
-    self.title ? self.title.downcase.gsub(" ", "-") : ""
+    self.title ? self.title.downcase.gsub(" ", "-").gsub(/[^a-zA-Z0-9-]/, "") : ""
   end
 
   def to_param
