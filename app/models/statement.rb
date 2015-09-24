@@ -24,7 +24,7 @@ class Statement < ActiveRecord::Base
   scope :approved, -> { includes(:event_day)
                           .where(approved: true)
                           .where('youtube_url is not null')
-                          .order('event_days.date desc') }
+                          .order('event_days.date asc') }
 
   accepts_nested_attributes_for :user, allow_destroy: false
 
