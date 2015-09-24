@@ -20,11 +20,11 @@ class Statement < ActiveRecord::Base
   belongs_to :campaign
   belongs_to :candidate
 
-  default_scope { includes(:event_day).order("event_days.date desc").order("statements.created_at desc") } 
+  default_scope { includes(:event_day).order("event_days.date desc").order("statements.created_at asc") } 
   scope :approved, -> { includes(:event_day)
                           .where(approved: true)
                           .where('youtube_url is not null')
-                          .order('event_days.date asc') }
+                          .order('event_days.date desc') }
 
   accepts_nested_attributes_for :user, allow_destroy: false
 
