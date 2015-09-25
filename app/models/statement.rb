@@ -66,7 +66,7 @@ class Statement < ActiveRecord::Base
   end
   
   def youtube_video_card_url
-    "https://i.ytimg.com/vi/#{self.youtube_id}/maxresdefault.jpg"
+    "http://i.ytimg.com/vi/#{self.youtube_id}/hqdefault.jpg"
   end
   
   def date
