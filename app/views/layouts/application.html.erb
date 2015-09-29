@@ -70,7 +70,7 @@
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript">stLight.options({publisher: "dc123aef-9555-4949-b4f6-2908b23baeef", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-    <%= yield(:share_metadata) if content_for?(:share_metadata) %> 
+    <%= yield(:share_metadata) if content_for?(:share_metadata) %>
   </head>
   <body>
     <div id="fb-root"></div>
@@ -139,7 +139,7 @@
             </p>
           </div>
           <div class="col-md-4 col-sm-12 main-footer__area main-footer__area--3">
-            
+
             <ul class="main-footer__horizontal-lg">
               <li><%= link_to 'Email', 'mailto:info@lessig2016.us?subject=Fix%20Democracy%20First' %></li> |
               <li><%= link_to 'Privacy Policy', 'https://lessig2016.us/privacy-policy/', target: '_blank' %></li> |
@@ -152,5 +152,18 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript">var _kmq = _kmq || [];
+      var _kmk = _kmk || '4f23210cd28379cf965ea2351de1550b13999b93';
+      function _kms(u){
+        setTimeout(function(){
+          var d = document, f = d.getElementsByTagName('script')[0],
+          s = d.createElement('script');
+          s.type = 'text/javascript'; s.async = true; s.src = u;
+          f.parentNode.insertBefore(s, f);
+        }, 1);
+      }
+      _kms('//i.kissmetrics.com/i.js');
+      _kms('//scripts.kissmetrics.com/' + _kmk + '.2.js');
+    </script>
   </body>
 </html>
